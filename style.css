@@ -1,16 +1,28 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #007bff;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
-    padding-top: 20px;
+    align-items: center;
+    padding: 20px;
 }
 
 .flashcard {
@@ -22,6 +34,12 @@ body {
     perspective: 1000px;
     margin: 10px;
     cursor: pointer;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.flashcard:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .flashcard-content {
@@ -32,7 +50,7 @@ body {
     transition: transform 0.5s;
 }
 
-.flashcard:hover .flashcard-content {
+.flashcard.flipped .flashcard-content {
     transform: rotateY(180deg);
 }
 
@@ -45,24 +63,25 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    border-radius: 10px;
 }
 
 .front {
-    background-color: #3498db;
+    background-color: #ffc107;
     color: #fff;
 }
 
 .back {
-    background-color: #e74c3c;
+    background-color: #dc3545;
     color: #fff;
     transform: rotateY(180deg);
 }
 
 .add-card-btn {
     display: block;
-    margin: 20px auto;
+    margin-top: 20px;
     padding: 10px 20px;
-    background-color: #3498db;
+    background-color: #28a745;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -72,5 +91,5 @@ body {
 }
 
 .add-card-btn:hover {
-    background-color: #2980b9;
+    background-color: #218838;
 }
